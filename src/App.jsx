@@ -140,6 +140,31 @@ export default function App() {
 
   return (
     <>
+      {/* Enhanced Background Effects */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        {/* Mesh Gradient Background */}
+        <div className="absolute inset-0 mesh-gradient bg-animate" />
+        
+        {/* Floating Particles */}
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div
+            key={i}
+            className="particle"
+            style={{
+              '--particle-color-start': `rgba(139, 92, 246, ${0.1 + (i * 0.02)})`,
+              '--particle-color-end': `rgba(67, 56, 202, ${0.05 + (i * 0.02)})`,
+              '--drift-x': `${-20 + Math.random() * 40}%`,
+              '--drift-y': `${-20 + Math.random() * 40}%`,
+              width: `${100 + (i * 50)}px`,
+              height: `${100 + (i * 50)}px`,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${-i * 2}s`
+            }}
+          />
+        ))}
+      </div>
+
       {/* Theme toggle */}
       <div className="fixed top-4 right-4 z-50 flex flex-col items-end gap-2">
         <a
