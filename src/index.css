@@ -2,8 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes rainWord {
+  from { transform: translateY(-10vh); opacity: 0; }
+  20% { opacity: 1; }
+  to { transform: translateY(110vh); opacity: 0; }
+}
+
 @layer utilities {
   .focus-ring:focus {
     @apply outline-none ring-2 ring-slate-400 dark:ring-slate-500 ring-offset-2 ring-offset-slate-50 dark:ring-offset-black;
+  }
+
+  .rain-container {
+    @apply fixed inset-0 pointer-events-none z-[-1] overflow-hidden;
+  }
+
+  .rain-word {
+    @apply absolute font-semibold text-slate-400/20 dark:text-slate-500/10 whitespace-nowrap;
+    animation-name: rainWord;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
   }
 } 

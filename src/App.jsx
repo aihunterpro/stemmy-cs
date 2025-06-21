@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import BackgroundEffects from './components/BackgroundEffects';
 
 const features = [
   {
@@ -87,6 +88,8 @@ export default function App() {
 
   return (
     <>
+      <BackgroundEffects />
+
       {/* Header */}
       <header className="flex justify-between items-center p-4 max-w-7xl mx-auto">
         <div className="text-xl font-bold tracking-tight">Stemmy</div>
