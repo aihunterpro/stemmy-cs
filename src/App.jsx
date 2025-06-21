@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import BackgroundEffects from './components/BackgroundEffects';
 
 const features = [
   {
@@ -127,7 +126,8 @@ export default function App() {
 
   return (
     <>
-      <BackgroundEffects />
+      {/* Background animations removed for performance */}
+
       {/* Theme toggle */}
       <div className="fixed top-4 right-4 z-50 flex flex-col items-end gap-2">
         <a
