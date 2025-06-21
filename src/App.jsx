@@ -140,33 +140,6 @@ export default function App() {
 
   return (
     <>
-      {/* Raining words background */}
-      <div className="rain-container">
-        {rainElements.map((el, i) => (
-          <span
-            key={i}
-            className="rain-word select-none"
-            style={{
-              left: `${el.left}%`,
-              animationDuration: `${el.duration}s`,
-              animationDelay: `${el.delay}s`,
-              fontSize: `${el.fontSize}rem`,
-            }}
-          >
-            {el.text}
-          </span>
-        ))}
-      </div>
-      {/* Grid background */}
-      <div className="background-grid" />
-      {/* Floating blobs */}
-      <div className="background-blobs">
-        <div className="blob-1" />
-        <div className="blob-2" />
-        <div className="blob-3" />
-        <div className="blob-4" />
-      </div>
-
       {/* Theme toggle */}
       <div className="fixed top-4 right-4 z-50 flex flex-col items-end gap-2">
         <a
