@@ -95,7 +95,7 @@ export default function App() {
         <div className="flex items-center gap-1">
           <img src="/logo.svg" alt="Stemma Logo" className="h-16 w-16" />
           <div className="text-2xl font-bold tracking-tight text-primary-purple">
-            Stemma
+            Stemmy
           </div>
         </div>
         <div className="flex items-center gap-4">
