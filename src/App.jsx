@@ -92,7 +92,12 @@ export default function App() {
 
       {/* Header */}
       <header className="flex justify-between items-center p-4 max-w-7xl mx-auto">
-        <div className="text-xl font-bold tracking-tight">Stemmy</div>
+        <div className="flex items-center gap-1">
+          <img src="/logo.svg" alt="Stemma Logo" className="h-16 w-16" />
+          <div className="text-2xl font-bold tracking-tight text-primary-purple">
+            Stemma
+          </div>
+        </div>
         <div className="flex items-center gap-4">
           <button onClick={toggleTheme} className="focus-ring rounded-full p-2" aria-label="Toggle theme">
             {isDark ? (
@@ -116,10 +121,10 @@ export default function App() {
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">
             Stop collecting words.
             <br />
-            Start <span className="font-serif italic font-medium text-slate-700 dark:text-slate-400">living</span> them.
+            Start <span className="font-serif italic font-medium text-primary-purple dark:text-primary-purple/90">living</span> them.
           </h1>
           <p className="mt-6 max-w-2xl mx-auto text-lg text-slate-600 dark:text-slate-400">
-            Stemmy is the first app that captures any vocabulary you encounter and transforms it into personalized stories, news, and quizzes that wire words into your long-term memory.
+            Stemma is the first app that captures any vocabulary you encounter and transforms it into personalized stories, news, and quizzes that wire words into your long-term memory.
           </p>
           <form
             id="subscribe"
@@ -149,13 +154,15 @@ export default function App() {
 
         {/* Features */}
         <section className="py-20 sm:py-32">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {features.map(feature => (
-              <div key={feature.title} className="flex gap-6">
-                <div className="w-10 h-10 flex-shrink-0 text-slate-600 dark:text-slate-400">{feature.icon}</div>
-                <div>
-                  <h3 className="text-xl font-semibold">{feature.title}</h3>
-                  <p className="mt-2 text-slate-600 dark:text-slate-400 leading-relaxed">{feature.text}</p>
+              <div key={feature.title} className="feature-tile p-8">
+                <div className="flex gap-6">
+                  <div className="icon-container w-10 h-10 flex-shrink-0 text-slate-600 dark:text-slate-400">{feature.icon}</div>
+                  <div>
+                    <h3 className="text-xl font-semibold">{feature.title}</h3>
+                    <p className="mt-2 text-slate-600 dark:text-slate-400 leading-relaxed">{feature.text}</p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -166,7 +173,7 @@ export default function App() {
       {/* Footer */}
       <footer className="py-12 text-center text-sm text-slate-500 dark:text-slate-600">
         <p>
-          &copy; {new Date().getFullYear()} Stemmy.app. All rights&nbsp;reserved.
+          &copy; {new Date().getFullYear()} Stemma. All rights&nbsp;reserved.
         </p>
       </footer>
     </>

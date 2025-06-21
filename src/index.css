@@ -23,4 +23,20 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
   }
+
+  .feature-tile {
+    @apply bg-slate-100/30 dark:bg-slate-900/30 backdrop-blur-sm rounded-2xl border border-slate-200/30 dark:border-slate-800/30 transition-all duration-300 ease-in-out;
+  }
+
+  .feature-tile:hover {
+    @apply transform -translate-y-1.5 bg-slate-100/50 dark:bg-slate-900/50 shadow-xl shadow-slate-300/10 dark:shadow-black/20 border-slate-200/50 dark:border-slate-800/50;
+  }
+
+  .feature-tile .icon-container {
+    @apply transition-transform duration-300 ease-in-out;
+  }
+
+  .feature-tile:hover .icon-container {
+    @apply scale-110 -rotate-6;
+  }
 } 
