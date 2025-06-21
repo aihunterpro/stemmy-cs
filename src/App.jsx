@@ -172,7 +172,7 @@ export default function App() {
         <a
           href="mailto:stemmyapp@gmail.com"
           aria-label="Contact us"
-          className="group flex h-10 w-10 items-center justify-center rounded-full bg-white/70 text-primary-purple backdrop-blur shadow transition-all hover:shadow-lg dark:bg-dark-text dark:text-white mb-2 focus:outline-none focus:ring-2 focus:ring-primary-purple"
+          className="group flex h-10 w-10 items-center justify-center rounded-full bg-white/70 text-primary-purple backdrop-blur shadow transition-all hover:shadow-lg dark:bg-dark-text dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-purple"
           tabIndex={0}
           title="Contact us"
         >
@@ -182,19 +182,6 @@ export default function App() {
           </svg>
           <span className="sr-only">Contact us</span>
         </a>
-        <button
-          onClick={toggleTheme}
-          aria-label="Toggle theme"
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-white/70 text-primary-purple backdrop-blur shadow transition-all hover:shadow-lg dark:bg-dark-text dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-purple"
-        >
-          {isDark ? (
-            // Sun icon
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.021 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
-          ) : (
-            // Moon icon
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" /></svg>
-          )}
-        </button>
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
