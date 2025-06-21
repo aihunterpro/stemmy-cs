@@ -6,18 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        'primary-purple': '#6200EA',
-        'primary-purple-button': '#5A00D6',
-        'secondary-teal': '#00BFA5',
-        'accent-amber': '#FFD54F',
-        'neutral-bg': '#F8F9FA',
-        'neutral-text': '#495057',
-        'dark-text': '#212529'
-      },
       fontFamily: {
-        sans: ['"Source Sans Pro"', 'ui-sans-serif', 'system-ui'],
-        display: ['Poppins', 'ui-sans-serif', 'system-ui']
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['Lora', 'serif']
       }
     }
   },
