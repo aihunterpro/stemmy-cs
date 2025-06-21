@@ -4,10 +4,9 @@
 
 /* Move critical keyframes outside Tailwind layers so they aren't purged in production */
 @keyframes float {
-  0% { transform: translate3d(0, 0, 0) rotate(0deg); }
-  33% { transform: translate3d(2%, -2%, 10px) rotate(1deg); }
-  66% { transform: translate3d(-1%, 1%, -5px) rotate(-1deg); }
-  100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-24px) rotate(10deg); }
+  100% { transform: translateY(0) rotate(0deg); }
 }
 
 @keyframes rainWord {
@@ -96,40 +95,6 @@
   .dark .rain-word {
     color: #fff;
   }
-
-  /* Background animations */
-  @keyframes wave {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-20px) scale(1.02); }
-  }
-
-  @keyframes particle-drift {
-    0% { transform: translate3d(0, 0, 0); }
-    100% { transform: translate3d(var(--drift-x, 0), var(--drift-y, 0), 0); }
-  }
-
-  /* Custom utilities */
-  .mesh-gradient {
-    background: radial-gradient(circle at 50% 50%, 
-      rgba(139, 92, 246, 0.15),
-      rgba(67, 56, 202, 0.10),
-      rgba(99, 102, 241, 0.05)
-    );
-    -webkit-backdrop-filter: blur(100px);
-    backdrop-filter: blur(100px);
-  }
-
-  .particle {
-    position: absolute;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--particle-color-start), var(--particle-color-end));
-    opacity: 0.5;
-    animation: particle-drift 20s infinite alternate ease-in-out;
-  }
-
-  .bg-animate {
-    animation: wave 20s infinite ease-in-out;
-  }
 } 
 
 /* Feature card styles with enhanced hover */
@@ -185,4 +150,49 @@
   background-image: linear-gradient(var(--grid-color) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
   background-size: 40px 40px;
+}
+
+/* ===== New animated gradient background ===== */
+.animated-gradient {
+  position: fixed;
+  inset: 0;
+  z-index: -4;
+  pointer-events: none;
+  background: linear-gradient(60deg, rgba(98,0,234,0.25), rgba(0,191,165,0.25), rgba(255,213,79,0.25));
+  background-size: 300% 300%;
+  animation: gradientShift 20s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== Orbiting words ===== */
+.orbit-container {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: -3;
+  animation: spin 60s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.orbit-word {
+  position: absolute;
+  font-weight: 600;
+  color: rgba(0,0,0,0.05);
+  white-space: nowrap;
+}
+
+.dark .orbit-word {
+  color: rgba(255,255,255,0.08);
 } 
