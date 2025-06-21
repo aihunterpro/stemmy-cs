@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState, useMemo } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import BackgroundEffects from './components/BackgroundEffects';
 
 const features = [
   {
@@ -40,20 +41,6 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [isDark, setIsDark] = useState(false);
   const featureRefs = useRef([]);
-
-  const rainElements = useMemo(() => {
-    const pool = ['learn', 'word', 'speak', 'write', 'read', 'hello', 'story', 'quiz', 'grammar', 'vocab', 'memory'];
-    return Array.from({ length: 40 }, () => {
-      const text = pool[Math.floor(Math.random() * pool.length)];
-      return {
-        text,
-        left: Math.random() * 100, // percentage
-        duration: 10 + Math.random() * 12, // 10-22s
-        delay: Math.random() * 20, // 0-20s
-        fontSize: 0.8 + Math.random() * 1.8, // 0.8-2.6rem
-      };
-    });
-  }, []);
 
   // Initialize theme based on localStorage or system preference
   useEffect(() => {
@@ -140,31 +127,7 @@ export default function App() {
 
   return (
     <>
-      {/* Enhanced Background Effects */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        {/* Mesh Gradient Background */}
-        <div className="absolute inset-0 mesh-gradient bg-animate" />
-        
-        {/* Floating Particles */}
-        {Array.from({ length: 8 }).map((_, i) => (
-          <div
-            key={i}
-            className="particle"
-            style={{
-              '--particle-color-start': `rgba(139, 92, 246, ${0.1 + (i * 0.02)})`,
-              '--particle-color-end': `rgba(67, 56, 202, ${0.05 + (i * 0.02)})`,
-              '--drift-x': `${-20 + Math.random() * 40}%`,
-              '--drift-y': `${-20 + Math.random() * 40}%`,
-              width: `${100 + (i * 50)}px`,
-              height: `${100 + (i * 50)}px`,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${-i * 2}s`
-            }}
-          />
-        ))}
-      </div>
-
+      <BackgroundEffects />
       {/* Theme toggle */}
       <div className="fixed top-4 right-4 z-50 flex flex-col items-end gap-2">
         <a
