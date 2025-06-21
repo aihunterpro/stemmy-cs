@@ -1,0 +1,23 @@
+{
+  "name": "stemmy-coming-soon",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "postinstall": "npm run build && cd server && npm install",
+    "start": "node server/server.js",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.5.2",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.4.4",
+    "vite": "^4.5.0"
+  }
+}
